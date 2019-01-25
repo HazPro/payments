@@ -1,0 +1,28 @@
+{
+  "name": "money",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha -r ts-node/register test/*Test.ts"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/faker": "^4.1.5",
+    "@types/mocha": "^5.2.5",
+    "@types/mongodb": "^3.1.19",
+    "@types/node": "^10.12.18",
+    "chai": "^4.2.0",
+    "faker": "^4.1.0",
+    "mocha": "^5.2.0",
+    "mongo-mock": "^3.4.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.4"
+  },
+  "dependencies": {
+    "@hazpro/queue": "^1.0.7",
+    "koa": "^2.6.2",
+    "koa-router": "^7.4.0",
+    "mongodb": "^3.1.12"
+  }
+}
