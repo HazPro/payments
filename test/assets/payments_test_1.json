@@ -1,0 +1,576 @@
+[
+  {
+    "stamp": "2014-08-01 03:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2014-10-01 03:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2014-09-01 03:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2015-08-01 03:20:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2015-01-01 03:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2015-02-01 03:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2016-03-01 00:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2016-02-01 00:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2016-01-01 00:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2016-05-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2017-03-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2017-04-30 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2017-07-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2017-01-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2016-12-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2017-08-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2017-09-30 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2017-10-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2017-11-30 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2017-12-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2018-01-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2018-02-28 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2018-03-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2018-04-30 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2018-06-30 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 700,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2018-07-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2018-08-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2018-09-30 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2018-10-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2018-11-30 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794936" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2014-08-01 03:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350.25,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2014-10-01 03:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2014-09-01 03:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 349.75,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2015-09-01 00:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2015-08-01 03:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2015-01-01 03:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 699,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2015-04-01 03:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2015-02-01 03:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2016-03-01 00:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2016-01-01 00:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2016-05-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2017-03-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2017-04-30 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2017-01-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2016-12-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2017-08-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 700,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2017-09-30 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2017-10-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2017-11-30 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2017-12-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2018-01-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2018-02-28 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2018-03-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2018-04-30 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2018-05-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2018-06-30 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2018-07-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2018-08-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2018-09-30 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2018-10-31 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2018-11-30 21:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "794937" },
+    "total": 350,
+    "operator": { "personalAccount": "51" }
+  },
+  {
+    "stamp": "2014-12-01 15:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "844610" },
+    "total": 1200,
+    "operator": { "personalAccount": "69" }
+  },
+  {
+    "stamp": "2015-12-01 15:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "844610" },
+    "total": 3500,
+    "operator": { "personalAccount": "69" }
+  },
+  {
+    "stamp": "2016-07-01 15:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "844610" },
+    "total": 1900,
+    "operator": { "personalAccount": "69" }
+  },
+  {
+    "stamp": "2017-05-01 15:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "844610" },
+    "total": 600,
+    "operator": { "personalAccount": "69" }
+  },
+  {
+    "stamp": "2014-12-01 15:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "844613" },
+    "total": 1200,
+    "operator": { "personalAccount": "6" }
+  },
+  {
+    "stamp": "2015-12-01 15:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "844613" },
+    "total": 3600,
+    "operator": { "personalAccount": "6" }
+  },
+  {
+    "stamp": "2016-12-01 15:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "844613" },
+    "total": 3600,
+    "operator": { "personalAccount": "6" }
+  },
+  {
+    "stamp": "2017-12-01 15:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "844613" },
+    "total": 3600,
+    "operator": { "personalAccount": "6" }
+  },
+  {
+    "stamp": "2014-12-01 15:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "844614" },
+    "total": 1200,
+    "operator": { "personalAccount": "6" }
+  },
+  {
+    "stamp": "2015-03-01 15:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "844614" },
+    "total": 900,
+    "operator": { "personalAccount": "6" }
+  },
+  {
+    "stamp": "2017-04-03 15:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "844614" },
+    "total": 7200,
+    "operator": { "personalAccount": "6" }
+  },
+  {
+    "stamp": "2014-12-01 15:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "844616" },
+    "total": 1200,
+    "operator": { "personalAccount": "6" }
+  },
+  {
+    "stamp": "2015-03-01 15:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "844616" },
+    "total": 700,
+    "operator": { "personalAccount": "6" }
+  },
+  {
+    "stamp": "2014-12-01 15:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "844617" },
+    "total": 1200,
+    "operator": { "personalAccount": "6" }
+  },
+  {
+    "stamp": "2015-11-01 15:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "844617" },
+    "total": 3200,
+    "operator": { "personalAccount": "6" }
+  },
+  {
+    "stamp": "2014-12-01 15:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "844657" },
+    "total": 300,
+    "operator": { "personalAccount": "6" }
+  },
+  {
+    "stamp": "2015-04-01 15:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "844657" },
+    "total": 1200,
+    "operator": { "personalAccount": "6" }
+  },
+  {
+    "stamp": "2014-12-01 15:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "844658" },
+    "total": 300,
+    "operator": { "personalAccount": "6" }
+  },
+  {
+    "stamp": "2015-04-01 15:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "844658" },
+    "total": 1200,
+    "operator": { "personalAccount": "6" }
+  },
+  {
+    "stamp": "2014-12-01 15:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "844659" },
+    "total": 300,
+    "operator": { "personalAccount": "6" }
+  },
+  {
+    "stamp": "2015-04-01 15:00:00",
+    "to": { "personalAccount": "11" },
+    "from": { "personalAccount": "844659" },
+    "total": 1200,
+    "operator": { "personalAccount": "6" }
+  }
+]

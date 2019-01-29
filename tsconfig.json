@@ -14,7 +14,8 @@
         "pretty": false,
         "removeComments": true,
         "rootDir": "./source",
-        "stripInternal": true
+        "stripInternal": true,
+        "resolveJsonModule": true
     },
     "exclude": [
         "test",

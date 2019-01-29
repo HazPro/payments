@@ -3,6 +3,7 @@ import * as Koa from 'koa'
 import DB from '../../db'
 import * as _ from 'lodash'
 import { ObjectId } from 'bson'
+import { GridFSBucket } from 'mongodb';
 /**
  * Налоговый идентификатор РФ
  */
@@ -28,6 +29,14 @@ export interface IPayment {
   total?: number
   stamp?: Date,
   _id?: any
+}
+export interface IPayerHistoryItem {
+  document: IPayment,
+  totalBalance: number
+}
+export interface IPayerHistory {
+  from: IPayer,
+  history: Array<IPayerHistoryItem>
 }
 /**
  * Тип отчета
@@ -64,6 +73,25 @@ export async function addPamentToReportOrg(
   }, { $inc: { "value": payment.total } }, { upsert: true })
 }
 
+export async function rebuildHistory(db: DB, payment: IPayment) {
+
+  const payments = await db.getDb().collection('payments').find({ "from.personalAccount": payment.from.personalAccount }).toArray()
+  const paymentHistory: Array<IPayerHistoryItem> = []
+  const newBalance = payments.sort((x, y) => {
+    const dx = new Date(x.stamp)
+    const dy = new Date(y.stamp)
+    return dx.getTime() - dy.getTime()
+  }).reduce((balance, x) => {
+    paymentHistory.push({
+      document: x,
+      totalBalance: balance + x.total
+    })
+    return balance + x.total
+  }, 0)
+  await db.getDb().collection('payment_history').updateOne({ "from.personalAccount": payment.from.personalAccount }, { $set: { history: paymentHistory } }, { upsert: true })
+  await updateBalance(db, payment, newBalance)
+}
+
 export async function addPamentToSliceReportOrg(
   db: DB,
   payment: IPayment,
@@ -93,6 +121,8 @@ export async function addPamentToSliceReportOrg(
 }
 
 function getDateRangeFromPayment(payment: IPayment) {
+  if (typeof payment.stamp == 'string')
+    payment.stamp = new Date(Date.parse(<any>payment.stamp))
   const day = `${payment.stamp.getFullYear()}-${payment.stamp.getMonth()}-${payment.stamp.getDate()}`;
   const month = `${payment.stamp.getFullYear()}-${payment.stamp.getMonth()}`;
   return { day, month };
@@ -128,22 +158,25 @@ export async function inPaymentHandler(db: DB, payment: IPayment) {
   let ex = await db.getDb().collection('payments').findOne(payment)
   if (!ex) {
     // add payment
-    const reuslt = await db.getDb().collection('payments').insertOne(payment);
-    if (reuslt.result.ok) {
+    const result = await db.getDb().collection('payments').insertOne(payment);
+    if (result.result.ok) {
       // push to report
-      await addPaymentToReportsOrg(db, payment, payment.to)
-      await addPaymentToReportsOrg(db, payment, payment.operator)
-      await addPaymentToSliceReportsOrg(db, payment, payment.to, payment.operator)
+      if (payment.to)
+        await addPaymentToReportsOrg(db, payment, payment.to)
+      if (payment.operator)
+        await addPaymentToReportsOrg(db, payment, payment.operator)
+      if (payment.to && payment.operator)
+        await addPaymentToSliceReportsOrg(db, payment, payment.to, payment.operator)
       // rebuild history
       // update balance
-      await updateBalance(db, payment)
+      await rebuildHistory(db, payment)
     } else {
       throw new Error('Ну удачное добавление платежа')
     }
     return {
       error: false,
       msg: "Платеж добавлен",
-      payment: reuslt.insertedId
+      payment: result.insertedId
     }
   } else {
     return {
@@ -168,7 +201,7 @@ export async function undoPaymentHandler(db: DB, payment: IPayment) {
     await addPaymentToSliceReportsOrg(db, payment, payment.to, payment.operator)
     // rebuild history
     // update balance
-    await updateBalance(db, payment)
+    await rebuildHistory(db, payment)
     return {
       error: false,
       msg: "Платеж удален"
@@ -176,10 +209,16 @@ export async function undoPaymentHandler(db: DB, payment: IPayment) {
   }
 }
 
-export async function updateBalance(db: DB, payment: IPayment) {
+export async function updateBalance(db: DB, payment: IPayment, overrideTotal?: number) {
+  let action: any
+  if (!overrideTotal) {
+    action = { $inc: { "value": payment.total } }
+  } else {
+    action = { $set: { "value": overrideTotal } }
+  }
   await db.getDb().collection('balance').findOneAndUpdate(
     { payer: payment.from },
-    { $inc: { "value": payment.total } },
+    action,
     { upsert: true }
   )
 }
