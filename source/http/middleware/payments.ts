@@ -3,7 +3,7 @@ import * as Koa from 'koa'
 import DB from '../../db'
 import * as _ from 'lodash'
 import { ObjectId } from 'bson'
-import { GridFSBucket } from 'mongodb';
+
 /**
  * Налоговый идентификатор РФ
  */
@@ -28,6 +28,8 @@ export interface IPayment {
   operator?: IPayer
   total?: number
   stamp?: Date,
+  paymentId?: string,
+  paymentType?: EPaymentType,
   _id?: any
 }
 export interface IPayerHistoryItem {
@@ -37,6 +39,13 @@ export interface IPayerHistoryItem {
 export interface IPayerHistory {
   from: IPayer,
   history: Array<IPayerHistoryItem>
+}
+/**
+ * 
+ */
+export enum EPaymentType {
+  Incoming = 'incoming',
+  Rent = 'rent'
 }
 /**
  * Тип отчета
@@ -75,7 +84,9 @@ export async function addPamentToReportOrg(
 
 export async function rebuildHistory(db: DB, payment: IPayment) {
 
-  const payments = await db.getDb().collection('payments').find({ "from.personalAccount": payment.from.personalAccount }).toArray()
+  const payments = await db.getDb().collection('payments')
+    .find({ "from.personalAccount": payment.from.personalAccount })
+    .toArray()
   const paymentHistory: Array<IPayerHistoryItem> = []
   const newBalance = payments.sort((x, y) => {
     const dx = new Date(x.stamp)
@@ -88,7 +99,12 @@ export async function rebuildHistory(db: DB, payment: IPayment) {
     })
     return balance + x.total
   }, 0)
-  await db.getDb().collection('payment_history').updateOne({ "from.personalAccount": payment.from.personalAccount }, { $set: { history: paymentHistory } }, { upsert: true })
+  await db.getDb().collection('payment_history')
+    .updateOne(
+      { "from.personalAccount": payment.from.personalAccount },
+      { $set: { history: paymentHistory } },
+      { upsert: true }
+    )
   await updateBalance(db, payment, newBalance)
 }
 
@@ -160,15 +176,16 @@ export async function inPaymentHandler(db: DB, payment: IPayment) {
     // add payment
     const result = await db.getDb().collection('payments').insertOne(payment);
     if (result.result.ok) {
-      // push to report
-      if (payment.to)
-        await addPaymentToReportsOrg(db, payment, payment.to)
-      if (payment.operator)
-        await addPaymentToReportsOrg(db, payment, payment.operator)
-      if (payment.to && payment.operator)
-        await addPaymentToSliceReportsOrg(db, payment, payment.to, payment.operator)
+      if (payment.total > 0) {
+        // push to report
+        if (payment.to)
+          await addPaymentToReportsOrg(db, payment, payment.to)
+        if (payment.operator)
+          await addPaymentToReportsOrg(db, payment, payment.operator)
+        if (payment.to && payment.operator)
+          await addPaymentToSliceReportsOrg(db, payment, payment.to, payment.operator)
+      }
       // rebuild history
-      // update balance
       await rebuildHistory(db, payment)
     } else {
       throw new Error('Ну удачное добавление платежа')
@@ -196,11 +213,15 @@ export async function undoPaymentHandler(db: DB, payment: IPayment) {
   } else {
     payment = rem.value
     payment.total = -payment.total
-    await addPaymentToReportsOrg(db, payment, payment.to)
-    await addPaymentToReportsOrg(db, payment, payment.operator)
-    await addPaymentToSliceReportsOrg(db, payment, payment.to, payment.operator)
+    if (rem.value.total > 0) {
+      if (payment.to)
+        await addPaymentToReportsOrg(db, payment, payment.to)
+      if (payment.operator)
+        await addPaymentToReportsOrg(db, payment, payment.operator)
+      if (payment.to && payment.operator)
+        await addPaymentToSliceReportsOrg(db, payment, payment.to, payment.operator)
+    }
     // rebuild history
-    // update balance
     await rebuildHistory(db, payment)
     return {
       error: false,
