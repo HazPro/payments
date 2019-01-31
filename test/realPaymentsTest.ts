@@ -1,5 +1,5 @@
 //mongodb://test:test123@ds113375.mlab.com:13375/hazpro-test
-import { IPayment, IPayer, inPaymentHandler, undoPaymentHandler } from '../source/http/middleware/payments'
+import { IPayment, IPayer, inPaymentHandler, undoPaymentHandler, withdrawHandler } from '../source/http/middleware/payments'
 import payments = require('./assets/payments_test_1.json');
 import * as DB from '../source/db'
 import * as config from '../source/config'
@@ -83,7 +83,7 @@ describe('Real Payments', () => {
       "from": { "personalAccount": "794937" },
       "total": -350
     }
-    await inPaymentHandler(dbClass, fee)
+    await withdrawHandler(dbClass, fee)
     const balance = await dbClass.getDb().collection('balance').findOne({ "payer.personalAccount": "794937" })
     expect(balance.value).eq(11549 - 350)
     const orgD = await dbClass.getDb()

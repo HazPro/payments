@@ -49,6 +49,9 @@ module.exports = {
                 "name": "report_slice_year_organization"
               },
               {
+                "name": "payment_history"
+              },
+              {
                 "name": "balance"
               }
             ]
@@ -124,6 +127,15 @@ module.exports = {
                 "key": {
                   "_id": 1
                 },
+                "ns": "ksu.payment_history",
+                "name": "_id_",
+                "unique": true
+              },
+              {
+                "v": 1,
+                "key": {
+                  "_id": 1
+                },
                 "ns": "ksu.balance",
                 "name": "_id_",
                 "unique": true
@@ -144,8 +156,9 @@ module.exports = {
                   "personalAccount": "3"
                 },
                 "total": 323,
-                "stamp": "2019-01-24T09:04:47.556Z",
-                "_id": ObjectID("5c497faf5339e34feda914ec")
+                "stamp": "2019-01-31T10:03:19.197Z",
+                "paymentType": "incoming",
+                "_id": ObjectID("5c52c7e790dfdb8d3296b34b")
               },
               {
                 "from": {
@@ -158,8 +171,9 @@ module.exports = {
                   "personalAccount": "5"
                 },
                 "total": 323.2,
-                "stamp": "2019-01-24T09:04:50.188Z",
-                "_id": ObjectID("5c497fb25339e34feda914f7")
+                "stamp": "2019-01-31T10:03:22.540Z",
+                "paymentType": "incoming",
+                "_id": ObjectID("5c52c7ea90dfdb8d3296b357")
               }
             ]
           },
@@ -171,24 +185,24 @@ module.exports = {
                 "organization": {
                   "personalAccount": "2"
                 },
-                "stamp": "2019-0-24",
-                "_id": ObjectID("5c497fb05339e34feda914ed")
+                "stamp": "2019-0-31",
+                "_id": ObjectID("5c52c7e790dfdb8d3296b34c")
               },
               {
                 "value": 323,
                 "organization": {
                   "personalAccount": "3"
                 },
-                "stamp": "2019-0-24",
-                "_id": ObjectID("5c497fb05339e34feda914f0")
+                "stamp": "2019-0-31",
+                "_id": ObjectID("5c52c7e890dfdb8d3296b34f")
               },
               {
                 "value": 323.2,
                 "organization": {
                   "personalAccount": "5"
                 },
-                "stamp": "2019-0-24",
-                "_id": ObjectID("5c497fb25339e34feda914f8")
+                "stamp": "2019-0-31",
+                "_id": ObjectID("5c52c7eb90dfdb8d3296b358")
               }
             ]
           },
@@ -201,7 +215,7 @@ module.exports = {
                   "personalAccount": "2"
                 },
                 "stamp": "2019-0",
-                "_id": ObjectID("5c497fb05339e34feda914ee")
+                "_id": ObjectID("5c52c7e790dfdb8d3296b34d")
               },
               {
                 "value": 323,
@@ -209,7 +223,7 @@ module.exports = {
                   "personalAccount": "3"
                 },
                 "stamp": "2019-0",
-                "_id": ObjectID("5c497fb05339e34feda914f1")
+                "_id": ObjectID("5c52c7e990dfdb8d3296b350")
               },
               {
                 "value": 323.2,
@@ -217,7 +231,7 @@ module.exports = {
                   "personalAccount": "5"
                 },
                 "stamp": "2019-0",
-                "_id": ObjectID("5c497fb25339e34feda914f9")
+                "_id": ObjectID("5c52c7eb90dfdb8d3296b359")
               }
             ]
           },
@@ -230,7 +244,7 @@ module.exports = {
                   "personalAccount": "2"
                 },
                 "stamp": "2019",
-                "_id": ObjectID("5c497fb05339e34feda914ef")
+                "_id": ObjectID("5c52c7e890dfdb8d3296b34e")
               },
               {
                 "value": 323,
@@ -238,7 +252,7 @@ module.exports = {
                   "personalAccount": "3"
                 },
                 "stamp": "2019",
-                "_id": ObjectID("5c497fb05339e34feda914f2")
+                "_id": ObjectID("5c52c7e990dfdb8d3296b351")
               },
               {
                 "value": 323.2,
@@ -246,7 +260,7 @@ module.exports = {
                   "personalAccount": "5"
                 },
                 "stamp": "2019",
-                "_id": ObjectID("5c497fb35339e34feda914fa")
+                "_id": ObjectID("5c52c7ec90dfdb8d3296b35a")
               }
             ]
           },
@@ -261,8 +275,8 @@ module.exports = {
                 "organization2": {
                   "personalAccount": "3"
                 },
-                "stamp": "2019-0-24",
-                "_id": ObjectID("5c497fb15339e34feda914f3")
+                "stamp": "2019-0-31",
+                "_id": ObjectID("5c52c7e990dfdb8d3296b352")
               },
               {
                 "value": 323.2,
@@ -272,8 +286,8 @@ module.exports = {
                 "organization2": {
                   "personalAccount": "5"
                 },
-                "stamp": "2019-0-24",
-                "_id": ObjectID("5c497fb35339e34feda914fb")
+                "stamp": "2019-0-31",
+                "_id": ObjectID("5c52c7ec90dfdb8d3296b35b")
               }
             ]
           },
@@ -289,7 +303,7 @@ module.exports = {
                   "personalAccount": "3"
                 },
                 "stamp": "2019-0",
-                "_id": ObjectID("5c497fb15339e34feda914f4")
+                "_id": ObjectID("5c52c7e990dfdb8d3296b353")
               },
               {
                 "value": 323.2,
@@ -300,7 +314,7 @@ module.exports = {
                   "personalAccount": "5"
                 },
                 "stamp": "2019-0",
-                "_id": ObjectID("5c497fb35339e34feda914fc")
+                "_id": ObjectID("5c52c7ec90dfdb8d3296b35c")
               }
             ]
           },
@@ -316,7 +330,7 @@ module.exports = {
                   "personalAccount": "3"
                 },
                 "stamp": "2019",
-                "_id": ObjectID("5c497fb15339e34feda914f5")
+                "_id": ObjectID("5c52c7ea90dfdb8d3296b354")
               },
               {
                 "value": 323.2,
@@ -327,7 +341,64 @@ module.exports = {
                   "personalAccount": "5"
                 },
                 "stamp": "2019",
-                "_id": ObjectID("5c497fb35339e34feda914fd")
+                "_id": ObjectID("5c52c7ec90dfdb8d3296b35d")
+              }
+            ]
+          },
+          {
+            "name": "payment_history",
+            "documents": [
+              {
+                "history": [
+                  {
+                    "document": {
+                      "from": {
+                        "personalAccount": "1"
+                      },
+                      "to": {
+                        "personalAccount": "2"
+                      },
+                      "operator": {
+                        "personalAccount": "3"
+                      },
+                      "total": 323,
+                      "stamp": {},
+                      "paymentType": "incoming",
+                      "_id": {
+                        "id": "\\RÇçßÛ2³K"
+                      }
+                    },
+                    "totalBalance": 323
+                  }
+                ],
+                "from.personalAccount": "1",
+                "_id": ObjectID("5c52c7ea90dfdb8d3296b355")
+              },
+              {
+                "history": [
+                  {
+                    "document": {
+                      "from": {
+                        "personalAccount": "4"
+                      },
+                      "to": {
+                        "personalAccount": "2"
+                      },
+                      "operator": {
+                        "personalAccount": "5"
+                      },
+                      "total": 323.2,
+                      "stamp": {},
+                      "paymentType": "incoming",
+                      "_id": {
+                        "id": "\\RÇêßÛ2³W"
+                      }
+                    },
+                    "totalBalance": 323.2
+                  }
+                ],
+                "from.personalAccount": "4",
+                "_id": ObjectID("5c52c7ec90dfdb8d3296b35e")
               }
             ]
           },
@@ -339,14 +410,14 @@ module.exports = {
                 "payer": {
                   "personalAccount": "1"
                 },
-                "_id": ObjectID("5c497fb25339e34feda914f6")
+                "_id": ObjectID("5c52c7ea90dfdb8d3296b356")
               },
               {
                 "value": 323.2,
                 "payer": {
                   "personalAccount": "4"
                 },
-                "_id": ObjectID("5c497fb35339e34feda914fe")
+                "_id": ObjectID("5c52c7ec90dfdb8d3296b35f")
               }
             ]
           }

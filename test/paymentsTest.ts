@@ -7,9 +7,9 @@ const loggerMock = {
     console.log(level, msg)
   }
 }
-describe.skip('Payments test', () => {
+describe('Payments test', () => {
   let dbClass: DB.default
-  
+
   before(async () => {
     db.MongoClient.persist = "payments.js"
     dbClass = new DB.default(config.default, loggerMock, db.MongoClient)
@@ -37,5 +37,37 @@ describe.skip('Payments test', () => {
       stamp: new Date()
     }
     await inPaymentHandler(dbClass, payment2)
+  })
+  it('Broken payment #1', async () => {
+    const payment2: any = {
+      from: { personalAccount: "4" },
+      to: { personalAccount: "2" },
+      operator: { personalAccount: "5" },
+      total: 323.2,
+      stamp: 'askdj02'
+    }
+    try {
+      await inPaymentHandler(dbClass, payment2)
+      throw new Error('Invalid behavior')
+    } catch (e) {
+      if (e.message == 'Invalid behavior')
+        throw e
+    }
+  })
+  it('Broken payment #2', async () => {
+    const payment2: any = {
+      from: { personalAccount: "4" },
+      to: { personalAccount: "2" },
+      operator: { personalAccount: "5" },
+      total: -323.2,
+      stamp: new Date()
+    }
+    try {
+      await inPaymentHandler(dbClass, payment2)
+      throw new Error('Invalid behavior')
+    } catch (e) {
+      if (e.message == 'Invalid behavior')
+        throw e
+    }
   })
 })

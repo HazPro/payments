@@ -32,6 +32,17 @@ export interface IPayment {
   paymentType?: EPaymentType,
   _id?: any
 }
+/**
+ * Списание
+ */
+export interface IWithdraw {
+  from?: IPayer,
+  to?: IPayer,
+  total?: number
+  stamp?: Date,
+  _id?: any
+}
+
 export interface IPayerHistoryItem {
   document: IPayment,
   totalBalance: number
@@ -171,6 +182,19 @@ export async function inPaymentHandler(db: DB, payment: IPayment) {
   if (_.isEmpty(payment.from) || _.isEmpty(payment.to) || !payment.total || !payment.stamp) {
     throw new Error('Не верные данные платежа')
   }
+  if (!payment.paymentType) {
+    payment.paymentType = EPaymentType.Incoming
+  }
+  if (payment.stamp && typeof (payment.stamp) == "string") {
+    const stamp = Date.parse(payment.stamp)
+    if (isNaN(stamp)) {
+      throw new Error('Не верная дата')
+    }
+    payment.stamp = new Date(stamp)
+  }
+  if (payment.total <= 0) {
+    throw new Error('Сумма платежа должна быть больше 0')
+  }
   let ex = await db.getDb().collection('payments').findOne(payment)
   if (!ex) {
     // add payment
@@ -201,6 +225,19 @@ export async function inPaymentHandler(db: DB, payment: IPayment) {
       msg: "Платеж уже добавлен",
       payment: ex._id
     }
+  }
+}
+export async function withdrawHandler(db: DB, withdraw: IWithdraw) {
+  const payment: IPayment = {
+    from: withdraw.from,
+    to: withdraw.to,
+    total: withdraw.total,
+    stamp: withdraw.stamp,
+    paymentType: EPaymentType.Rent
+  }
+  const result = await db.getDb().collection('payments').insertOne(payment);
+  if(result.insertedCount == 1) {
+    await rebuildHistory(db, payment)
   }
 }
 
