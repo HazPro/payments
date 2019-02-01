@@ -5,8 +5,7 @@ import * as bodyparser from 'koa-bodyparser'
 import * as _ from 'lodash'
 import { Auth } from '@hazpro/auth'
 import { Queue, IMessage } from '@hazpro/queue'
-import { sendSms } from './middleware/send'
-import { ISmsMessage } from '../sms'
+import { inPayment, undoPayment, withdraw, IPayment, EPaymentType } from './middleware/payments'
 import * as DB from './../db'
 
 
@@ -52,7 +51,9 @@ export default class HttpServer {
     _.set(ctx, 'ca', this.ca.getCerificate())
     _.set(ctx, 'db', this.db)
     // Templates endpoints
-    this.router.get('Send email', '/api/mail/send', this.ca.auth, sendSms)
+    this.router.post('Incoming Payment', '/api/payment/in', this.ca.auth, inPayment)
+    this.router.post('Undo Payment', '/api/payment/undo', this.ca.auth, undoPayment)
+    this.router.post('Withdraw', '/api/payment/withdraw', this.ca.auth, withdraw)
     await next()
   }
   async httpLogger(ctx: Koa.Context, next: Function) {
@@ -81,7 +82,7 @@ export default class HttpServer {
     const ctx = {
       config: this.config,
       request: {
-        body: msg.body.body as ISmsMessage
+        body: msg.body.body as IPayment
       },
       throw: (_, err) => {
         this.logger.log('error', err)
@@ -89,7 +90,21 @@ export default class HttpServer {
       },
       body: undefined
     }
-    await sendSms(ctx, async () => { })
+    const payment = msg.body.body as IPayment
+    switch (payment.paymentType) {
+      case EPaymentType.Incoming:
+        await inPayment(ctx, async () => { })
+        break
+      case EPaymentType.Rent:
+        await withdraw(ctx, async () => { })
+        break
+      case EPaymentType.Undo:
+        await undoPayment(ctx, async () => { })
+        break
+      default:
+        await inPayment(ctx, async () => { })
+        break
+    }
     if (ctx.body && !ctx.body.error) {
       console.log(ctx.body)
       msg.ack()

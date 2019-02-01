@@ -56,7 +56,8 @@ export interface IPayerHistory {
  */
 export enum EPaymentType {
   Incoming = 'incoming',
-  Rent = 'rent'
+  Rent = 'rent',
+  Undo = 'undo'
 }
 /**
  * Тип отчета
@@ -295,6 +296,20 @@ export async function inPayment(
   const body: IPayment = _.get(ctx, 'request.body')
   try {
     ctx.body = await inPaymentHandler(db, body)
+  } catch (e) {
+    ctx.throw(400, e.message)
+  }
+
+}
+
+export async function withdraw(
+  ctx: Koa.ParameterizedContext<{}, router.IRouterContext> | any,
+  next: () => Promise<any>
+) {
+  const db: DB = _.get(ctx, 'db')
+  const body: IPayment = _.get(ctx, 'request.body')
+  try {
+    ctx.body = await withdrawHandler(db, body)
   } catch (e) {
     ctx.throw(400, e.message)
   }
